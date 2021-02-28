@@ -17,15 +17,18 @@ h1, h2, h3{
     background-color: #393f44;
     margin: 10px 0;
     padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .navbar a {
     color: white;
+    font-size: 20px;
+    text-decoration: none;
+    padding: 0 10px;
 }
 
-.blue-box{
-    width: 200px;
-    height: 200px;
-    background-color: lightblue;
-    border: 20px solid black;
+.navbar i{
+    font-size: 30px;
 }
