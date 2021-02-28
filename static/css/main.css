@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body{
     font-family: 'Roboto', sans-serif;
 }
@@ -9,8 +15,17 @@ h1, h2, h3{
 
 .navbar{
     background-color: #393f44;
+    margin: 10px 0;
+    padding: 10px;
 }
 
 .navbar a {
     color: white;
+}
+
+.blue-box{
+    width: 200px;
+    height: 200px;
+    background-color: lightblue;
+    border: 20px solid black;
 }
