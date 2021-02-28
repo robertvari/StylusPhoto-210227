@@ -2,7 +2,11 @@ from django.shortcuts import render
 
 
 def home_view(request):
-    return render(request, "home.html")
+    context = {
+        "names": ["Robert", "Csaba", "Kriszta", "Tamás"]
+    }
+
+    return render(request, "home.html", context)
 
 
 def contact_view(request):
