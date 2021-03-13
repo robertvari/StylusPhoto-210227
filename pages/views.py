@@ -11,6 +11,7 @@ def image_generator(photo_number, resolution=(800, 600)):
 
 
 def home_view(request):
+    # todo create a model for this
     context = {
         "title": "photographica",
         "subtitle": "Ahol a fotó és a grafika találkozik",
@@ -21,12 +22,28 @@ def home_view(request):
     return render(request, "home.html", context)
 
 
-def contact_view(request):
-    return render(request, "contact.html")
-
-
 def about_view(request):
-    return render(request, "about.html")
+    # todo create a model for this
+    context = {
+        "title": "Hogyan is készülnek a képeim?",
+        "subtitle": "",
+        "content": "Előszőr is tervezéssel! Sokat rajzolok, vázlatokat készítek a fotózások előtt. Egyrészt, szeretek koncepcióval készülni, és szeretnék az ügyfélhez, modellhez legjobban illő ötletekkel előállni. A fotózásra emiatt felkészülten érkezek, és lehet is a koncepció kivitelezésével foglalkozni.",
+        "photos": image_generator(1)
+    }
+
+    return render(request, "about.html", context)
+
+
+def contact_view(request):
+    # todo create a model for this
+    context = {
+        "title": "Kérjen tőlünk ajánlatot",
+        "subtitle": "",
+        "content": "",
+        "photos": image_generator(1)
+    }
+
+    return render(request, "contact.html", context)
 
 
 def gallery_view(request):

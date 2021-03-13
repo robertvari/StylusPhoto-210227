@@ -3,5 +3,13 @@
 {% block title %} About {% endblock title %}
 
 {% block body %}
-    <h1>About Page</h1>
+    <h1>{{ title }}</h1>
+    <h3>{{ subtitle }}</h3>
+
+    <p>{{ content }}</p>
+
+    {% for photo in photos %}
+        <img src={{ photo }} alt="">
+    {% endfor %}
+
 {% endblock body %}

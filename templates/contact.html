@@ -3,5 +3,14 @@
 {% block title %} Home {% endblock title %}
 
 {% block body %}
-    <h1>Contact Page</h1>
+    <h1>{{ title }}</h1>
+    <h3>{{ subtitle }}</h3>
+    <p>{{ email }}</p>
+    <p>{{ phone }}</p>
+
+    <form action="">
+        <input type="email" placeholder="Email">
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+        <button>Küldés</button>
+    </form>
 {% endblock body %}
