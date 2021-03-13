@@ -1,13 +1,5 @@
 from django.shortcuts import render
-
-
-def image_generator(photo_number, resolution=(800, 600)):
-    photo_links = []
-
-    for i in range(photo_number):
-        photo_links.append(f"https://source.unsplash.com/{resolution[0]}x{resolution[1]}/?nature{i},water{i}")
-
-    return photo_links
+from utilities.mock_data import image_generator
 
 
 def home_view(request):
@@ -44,11 +36,3 @@ def contact_view(request):
     }
 
     return render(request, "contact.html", context)
-
-
-def gallery_view(request):
-    context = {
-        "photos": image_generator(50)
-    }
-
-    return render(request, "gallery.html", context)
