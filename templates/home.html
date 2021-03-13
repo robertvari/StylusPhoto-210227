@@ -3,10 +3,21 @@
 {% block title %} Home {% endblock title %}
 
 {% block body %}
-    <h1>{{ title }}</h1>
-    <h3>{{ subtitle }}</h3>
-    <p>{{ content }}</p>
 
-    <p>{{ photos }}</p>
+    <div class="home-container">
+        <div>
+            {% for photo in photos %}
+                <img src={{ photo }} alt="">
+            {% endfor %}
+        </div>
+
+        <div>
+            <div class="sticky-container">
+                <h1>{{ title }}</h1>
+                <h3>{{ subtitle }}</h3>
+                <p>{{ content }}</p>
+            </div>
+        </div>
+    </div>
 
 {% endblock body %}
