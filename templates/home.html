@@ -3,13 +3,10 @@
 {% block title %} Home {% endblock title %}
 
 {% block body %}
-    <h1>Üdvözöllek az oldalamon</h1>
+    <h1>{{ title }}</h1>
+    <h3>{{ subtitle }}</h3>
+    <p>{{ content }}</p>
 
-    {% for i in names %}
-        <h3>{{ i }}</h3>
-    {% endfor %}
-
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem blanditiis debitis dolore fugit nemo nihil sit vel? At consequuntur eius et exercitationem! Accusantium ad adipisci alias aliquid aperiam aspernatur blanditiis culpa, debitis dolor dolorem eaque eius eligendi enim eos, excepturi facere ipsum iste labore laborum maiores modi nam nobis non odit officiis pariatur placeat quisquam rem sapiente similique suscipit tempore temporibus ut veniam veritatis vero voluptatum? Aliquam animi beatae consequatur culpa earum eligendi fuga iure minima molestias, nesciunt officiis omnis, perspiciatis qui quisquam repellat rerum velit? Ab consectetur facere ipsa nobis numquam quia rem suscipit. Deserunt eaque fugiat id impedit ipsam necessitatibus nobis perferendis quae qui sed. Possimus quam repellendus sint voluptates. Doloremque sunt totam ullam vero. Ab adipisci aspernatur at deserunt distinctio doloribus excepturi magnam minus perspiciatis, porro, ratione unde voluptas voluptate! Aspernatur assumenda culpa est exercitationem facere facilis iure laboriosam, minima molestiae nobis numquam obcaecati, odit qui reiciendis repellendus vel voluptates. A amet beatae cumque deleniti dolore dolorem error exercitationem explicabo id iusto, laborum magnam nulla pariatur perferendis temporibus vel velit voluptas. A assumenda commodi cum debitis dignissimos distinctio dolorum earum excepturi explicabo id ipsam necessitatibus neque nobis officiis, perferendis quia recusandae repellendus repudiandae, saepe voluptas voluptatem voluptatibus.</p>
-    <p>This is my webpage: <a href="">My webpage</a></p>
+    <p>{{ photos }}</p>
 
 {% endblock body %}
