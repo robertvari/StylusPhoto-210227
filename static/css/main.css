@@ -2,6 +2,8 @@
 @import "header.css";
 @import "home.css";
 @import "gallery.css";
+@import "photo_details.css";
+@import "contact.css";
 
 * {
     margin: 0;
