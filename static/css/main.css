@@ -1,6 +1,7 @@
 @import "navbar.css";
 @import "header.css";
 @import "home.css";
+@import "gallery.css";
 
 * {
     margin: 0;

@@ -1,0 +1,29 @@
+.gallery-layout{
+    display: flex;
+    flex-direction: column;
+}
+
+.gallery-layout .menu {
+    position: sticky;
+    top: 51px;
+    background-color: white;
+    z-index: 10;
+
+    display: flex;
+    justify-content: center;
+    margin: 0 0 10px 0;
+}
+
+.menu a {
+    padding: 10px;
+    background-color: transparent;
+    color: #393f44;
+    text-decoration: none;
+
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.menu a:hover{
+    background-color: #393f44;
+    color: white;
+}

@@ -3,5 +3,18 @@
 {% block title %} Gallery {% endblock title %}
 
 {% block body %}
-    <h1>Gallery Page</h1>
+    <div class="gallery-layout">
+        <div class="menu">
+            {% for category in categories %}
+                <a href="">{{ category }}</a>
+            {% endfor %}
+        </div>
+
+        <div class="image-grid">
+            {% for photo in photos %}
+                <img src={{ photo }} alt="">
+            {% endfor %}
+        </div>
+    </div>
+
 {% endblock body %}
