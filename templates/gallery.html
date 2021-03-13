@@ -12,7 +12,7 @@
 
         <div class="image-grid">
             {% for photo in photos %}
-                <img src={{ photo }} alt="">
+                <a href="/gallery/{{ forloop.counter }}/"><img src={{ photo }} alt=""></a>
             {% endfor %}
         </div>
     </div>

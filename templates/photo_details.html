@@ -1,0 +1,14 @@
+{% extends "_base.html" %}
+
+{% block title %} Photo details {% endblock title %}
+
+{% block body %}
+    <div class="details-container">
+        <div>{{ photo }}</div>
+        <div>
+            <h1>{{ title }}</h1>
+            <h3>{{ subtitle }}</h3>
+            <p>{{ content }}</p>
+        </div>
+    </div>
+{% endblock body %}
