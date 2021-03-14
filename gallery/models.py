@@ -14,6 +14,7 @@ class Category(models.Model):
 
 class Photo(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    frontpage = models.BooleanField(default=False)
 
     title = models.CharField(max_length=200)
     image = models.ImageField(upload_to="photos")
@@ -21,7 +22,7 @@ class Photo(models.Model):
 
     uploaded = models.DateTimeField(auto_now_add=True)
 
-    slug = models.SlugField(max_length=200, blank=True)
+    slug = models.SlugField(max_length=200, blank=True, editable=False)
 
     def save(self, *args, **kwargs):
         # before save if image replaced?
