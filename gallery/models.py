@@ -1,4 +1,7 @@
 from django.db import models
+from django.db.models.signals import post_delete, pre_save
+from PIL import Image
+import os
 
 
 class Category(models.Model):
@@ -37,7 +40,21 @@ class Photo(models.Model):
             pass
 
     def resize_image(self):
-        pass
+        image_path = self.image.path
+        img = Image.open(image_path)
+
+        max_size = 1500
+        if img.size[0] > max_size or img.size[1] > max_size:
+            img.thumbnail((max_size, max_size))
+            img.save(image_path)
 
     def __str__(self):
         return self.title
+
+
+def image_cleanup(sender, instance, **kwargs):
+    if os.path.exists(instance.image.path):
+        os.remove(instance.image.path)
+
+
+post_delete.connect(image_cleanup, sender=Photo)
