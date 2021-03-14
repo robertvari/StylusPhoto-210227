@@ -1,14 +1,14 @@
 <div class="navbar">
-    <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/contact/">Contact</a>
-    <a href="/gallery/">Gallery</a>
+    <a href="/" class="nav-button {% if request.path == '/' %}active{% endif %}">Home</a>
+    <a href="/about/" class="nav-button {% if request.path == '/about/' %}active{% endif %}">About</a>
+    <a href="/contact/" class="nav-button {% if request.path == '/contact/' %}active{% endif %}">Contact</a>
+    <a href="/gallery/" class="nav-button {% if request.path == '/gallery/' %}active{% endif %}">Gallery</a>
 
-    <a href="">
+    <a href="" class="nav-button">
         <i class="fab fa-facebook-square"></i>
     </a>
 
-    <a href="">
+    <a href="" class="nav-button">
         <i class="fab fa-instagram-square"></i>
     </a>
 </div>

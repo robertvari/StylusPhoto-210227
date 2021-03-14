@@ -4,19 +4,24 @@
     z-index: 10;
 
     background-color: #393f44;
-    padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-bottom: 1px solid #393f44;
 }
 
-.navbar a {
+.nav-button {
     color: white;
     font-size: 20px;
     text-decoration: none;
-    padding: 0 10px;
+    padding: 10px 10px;
 }
 
-.navbar i{
-    font-size: 30px;
+.nav-button i{
+    font-size: 23px;
+}
+
+.active {
+    background-color: white;
+    color: #393f44;
 }

@@ -5,7 +5,7 @@
 
 .gallery-layout .menu {
     position: sticky;
-    top: 51px;
+    top: 44px;
     background-color: white;
     z-index: 10;
 
@@ -14,7 +14,7 @@
     margin: 0 0 10px 0;
 }
 
-.menu a {
+.category-button {
     padding: 10px;
     background-color: transparent;
     color: #393f44;
@@ -23,7 +23,12 @@
     transition: background-color 0.3s, color 0.3s;
 }
 
-.menu a:hover{
+.category-button:hover{
+    background-color: #393f44;
+    color: white;
+}
+
+.gallery-layout .active {
     background-color: #393f44;
     color: white;
 }
