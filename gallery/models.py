@@ -1,5 +1,6 @@
 from django.db import models
 from django.db.models.signals import post_delete, pre_save
+from django.utils.text import slugify
 from PIL import Image
 import os
 
@@ -58,3 +59,11 @@ def image_cleanup(sender, instance, **kwargs):
 
 
 post_delete.connect(image_cleanup, sender=Photo)
+
+
+def slug_generator(sender, instance, **kwargs):
+    if not instance.slug:
+        instance.slug = slugify(instance.title)
+
+
+pre_save.connect(slug_generator, sender=Photo)
