@@ -1,15 +1,22 @@
 from django.shortcuts import render
 from utilities.mock_data import image_generator
 
+from .models import HomePage
+
 
 def home_view(request):
-    # todo create a model for this
+    homepage_content = HomePage.objects.all()
     context = {
-        "title": "photographica",
-        "subtitle": "Ahol a fotó és a grafika találkozik",
-        "content": "Grafikus vagyok, és fotós. Kreatív képeimmel szeretném azt megmutatni, ami nem létezik (vagy mégis?) Célom, hogy az emberek megálljanak képeim előtt és elgondolkozzanak. Érezzenek valamit, csodálkozzanak, szeressék, gyűlöljék, de mindenképp érzéseket váltson ki. Ne egyszerűen csak elmenjenek előtte, továbblépjenek. És ha valaki visszatér, hogy újra megnézze, akkor már boldog vagyok.",
+        "title": "",
+        "subtitle": "",
+        "content": "",
         "photos": image_generator(5)
     }
+
+    if homepage_content:
+        context["title"] = homepage_content[0].title
+        context["subtitle"] = homepage_content[0].subtitle
+        context["content"] = homepage_content[0].content
 
     return render(request, "home.html", context)
 
