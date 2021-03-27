@@ -18,3 +18,12 @@ class HomePage(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class AboutPageModel(models.Model):
+    title = models.CharField(max_length=200)
+    subtitle = models.CharField(max_length=200, blank=True)
+    content = models.TextField(max_length=2000)
+
+    def __str__(self):
+        return self.title
