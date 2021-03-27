@@ -7,7 +7,7 @@
     <div class="home-container">
         <div>
             {% for photo in photos %}
-                <img src={{ photo }} alt="">
+                <img src={{ photo.image.url }} alt="">
             {% endfor %}
         </div>
 

@@ -1,14 +1,16 @@
 from django.views.generic import TemplateView
 from utilities.mock_data import image_generator
+import random
 
 from .models import HomePage, AboutPageModel
+from gallery.models import Photo
 
 
 class HomeView(TemplateView):
     template_name = "home.html"
 
     extra_context = {
-        "photos": image_generator(5)
+        "photos": Photo.objects.filter(frontpage=True)
     }
 
     homepage_content = HomePage.objects.all()
@@ -21,8 +23,10 @@ class HomeView(TemplateView):
 class AboutView(TemplateView):
     template_name = "about.html"
 
+    photos = Photo.objects.all()
+
     extra_context = {
-        "photos": image_generator(1)
+        "photo": random.choice(photos)
     }
 
     about_content = AboutPageModel.objects.all()

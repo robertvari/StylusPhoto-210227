@@ -8,8 +8,7 @@
 
     <p>{{ content }}</p>
 
-    {% for photo in photos %}
-        <img src={{ photo }} alt="">
-    {% endfor %}
+    <img src={{ photo.image.url }} alt="">
+
 
 {% endblock body %}
