@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView, ListView
+from django.views.generic import DetailView, ListView
 
 from .models import Category, Photo
 
@@ -32,3 +32,9 @@ def photo_details(request, slug):
     }
 
     return render(request, "photo_details.html", context)
+
+
+class PhotoDetailView(DetailView):
+    model = Photo
+    template_name = "photo_details.html"
+    context_object_name = "photo"

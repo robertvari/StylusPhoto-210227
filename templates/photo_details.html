@@ -5,12 +5,13 @@
 {% block body %}
     <div class="details-container">
 
-        <div><img src={{ photo }} alt=""></div>
+        <div><img src={{ photo.image.url }} alt=""></div>
 
         <div>
-            <h1>{{ title }}</h1>
-            <h3>{{ subtitle }}</h3>
-            <p>{{ content }}</p>
+            <h1>{{ photo.title }}</h1>
+            <small>{{ photo.uploaded|date:'Y N d H:i' }}</small>
+            <hr>
+            <p>{{ photo.description }}</p>
         </div>
 
     </div>
