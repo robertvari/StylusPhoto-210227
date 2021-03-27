@@ -1,9 +1,9 @@
-from django.views.generic import TemplateView
-from utilities.mock_data import image_generator
+from django.views.generic import TemplateView, FormView
 import random
 
 from .models import HomePage, AboutPageModel
 from gallery.models import Photo
+from .forms import ContactForm
 
 
 class HomeView(TemplateView):
@@ -36,9 +36,26 @@ class AboutView(TemplateView):
         extra_context["content"] = about_content[0].content
 
 
-class ContactView(TemplateView):
+class ContactView(FormView):
     template_name = "contact.html"
+    form_class = ContactForm
+    success_url = "/contact/sent/"
+
     extra_context = {
         "title": "Kérjen tőlünk ajánlatot",
-        "photos": image_generator(1)
     }
+
+    def form_valid(self, form):
+        print(form.data["name"])
+        print(form.data["email"])
+        print(form.data["message"])
+
+        # todo send email for me!
+        # use SendGrid for sending out emails
+
+        return super().form_valid(form)
+
+
+
+class ContactSentView(TemplateView):
+    template_name = "email_sent.html"
