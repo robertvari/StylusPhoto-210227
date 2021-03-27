@@ -1,17 +1,26 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, ListView
 
 from .models import Category, Photo
 
 
-class GalleryView(TemplateView):
+class GalleryView(ListView):
     template_name = "gallery.html"
+    model = Photo
+    context_object_name = "photos"
 
-    photos = Photo.objects.all()
     extra_context = {
         "categories": Category.objects.all(),
-        "photos": photos
     }
+
+    def get_queryset(self):
+        category_name = self.request.GET.get("category")
+        if category_name:
+            photos = Photo.objects.filter(category__title=category_name)
+        else:
+            photos = Photo.objects.all()
+
+        return photos
 
 
 def photo_details(request, slug):
