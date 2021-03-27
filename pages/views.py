@@ -1,24 +1,22 @@
 from django.shortcuts import render
+from django.views.generic import TemplateView
 from utilities.mock_data import image_generator
 
 from .models import HomePage
 
 
-def home_view(request):
-    homepage_content = HomePage.objects.all()
-    context = {
-        "title": "",
-        "subtitle": "",
-        "content": "",
+class HomeView(TemplateView):
+    template_name = "home.html"
+
+    extra_context = {
         "photos": image_generator(5)
     }
 
+    homepage_content = HomePage.objects.all()
     if homepage_content:
-        context["title"] = homepage_content[0].title
-        context["subtitle"] = homepage_content[0].subtitle
-        context["content"] = homepage_content[0].content
-
-    return render(request, "home.html", context)
+        extra_context["title"] = homepage_content[0].title
+        extra_context["subtitle"] = homepage_content[0].subtitle
+        extra_context["content"] = homepage_content[0].content
 
 
 def about_view(request):
