@@ -1,14 +1,14 @@
 from django.shortcuts import render
+from django.views.generic import TemplateView
 from utilities.mock_data import image_generator
 
 
-def gallery_view(request):
-    context = {
+class GalleryView(TemplateView):
+    template_name = "gallery.html"
+    extra_context = {
         "categories": ["Wedding", "Nature", "Sport"],
         "photos": image_generator(50)
     }
-
-    return render(request, "gallery.html", context)
 
 
 def photo_details(request, slug):
