@@ -4,6 +4,7 @@
 @import "gallery.css";
 @import "photo_details.css";
 @import "contact.css";
+@import "about.css";
 
 * {
     margin: 0;
