@@ -1,13 +1,16 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
-from utilities.mock_data import image_generator
+
+from .models import Category, Photo
 
 
 class GalleryView(TemplateView):
     template_name = "gallery.html"
+
+    photos = Photo.objects.all()
     extra_context = {
-        "categories": ["Wedding", "Nature", "Sport"],
-        "photos": image_generator(50)
+        "categories": Category.objects.all(),
+        "photos": photos
     }
 
 
