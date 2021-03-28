@@ -1,4 +1,5 @@
 from django.views.generic import TemplateView, FormView
+from django.core.mail import send_mail
 import random
 
 from .models import HomePage, AboutPageModel
@@ -52,9 +53,16 @@ class ContactView(FormView):
 
         # todo send email for me!
         # use SendGrid for sending out emails
+        send_mail(
+            "Contact",
+            form.data["message"],
+            form.data["email"],
+            ['testaddress@gmail.com'],
+            fail_silently=False
+        )
+
 
         return super().form_valid(form)
-
 
 
 class ContactSentView(TemplateView):
