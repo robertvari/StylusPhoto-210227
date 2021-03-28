@@ -2,7 +2,7 @@
     position: sticky;
     top: 0;
     z-index: 10;
-
+    min-height: 44px;
     background-color: #393f44;
     display: flex;
     justify-content: center;
@@ -15,6 +15,7 @@
     font-size: 20px;
     text-decoration: none;
     padding: 10px 10px;
+    cursor: pointer;
 }
 
 .nav-button i{
@@ -24,4 +25,8 @@
 .active {
     background-color: white;
     color: #393f44;
+}
+
+.mobile-menu i {
+    display: none;
 }

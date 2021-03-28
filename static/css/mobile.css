@@ -1,0 +1,39 @@
+/* Mobile Styles */
+@media only screen and (max-width: 960px) {
+  .home-container{
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 5px;
+  }
+
+  header{
+    flex-direction: column;
+  }
+
+  .mobile-menu i {
+    display: block;
+  }
+
+  .desktop-menu {
+    display: none;
+  }
+
+  .navbar{
+    flex-direction: column;
+    align-items: flex-end;
+  }
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 961px) {
+  .navbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .desktop-menu {
+    display: flex;
+    flex-direction: row;
+  }
+}

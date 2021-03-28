@@ -1,14 +1,20 @@
 <div class="navbar">
-    <a href="/" class="nav-button {% if request.path == '/' %}active{% endif %}">Home</a>
-    <a href="/about/" class="nav-button {% if request.path == '/about/' %}active{% endif %}">About</a>
-    <a href="/contact/" class="nav-button {% if request.path == '/contact/' %}active{% endif %}">Contact</a>
-    <a href="/gallery/" class="nav-button {% if request.path == '/gallery/' %}active{% endif %}">Gallery</a>
+    <div class="mobile-menu">
+        <i class="nav-button fas fa-bars" onclick="menu_clicked()"></i>
+    </div>
 
-    <a href={{ facebook }} class="nav-button">
-        <i class="fab fa-facebook-square"></i>
-    </a>
+    <div class="desktop-menu" id="desktop-menu-container">
+        <a href="/" class="nav-button {% if request.path == '/' %}active{% endif %}">Home</a>
+        <a href="/about/" class="nav-button {% if request.path == '/about/' %}active{% endif %}">About</a>
+        <a href="/contact/" class="nav-button {% if request.path == '/contact/' %}active{% endif %}">Contact</a>
+        <a href="/gallery/" class="nav-button {% if request.path == '/gallery/' %}active{% endif %}">Gallery</a>
 
-    <a href={{ instagram }} class="nav-button">
-        <i class="fab fa-instagram-square"></i>
-    </a>
+        <a href={{ facebook }} class="nav-button">
+            <i class="fab fa-facebook-square"></i>
+        </a>
+
+        <a href={{ instagram }} class="nav-button">
+            <i class="fab fa-instagram-square"></i>
+        </a>
+    </div>
 </div>
