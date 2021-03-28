@@ -8,10 +8,12 @@
         <div><img src={{ photo.image.url }} alt=""></div>
 
         <div>
-            <h1>{{ photo.title }}</h1>
-            <small>{{ photo.uploaded|date:'Y N d H:i' }}</small>
-            <hr>
-            <p>{{ photo.description }}</p>
+            <div class="sticky-container">
+                <h1>{{ photo.title }}</h1>
+                <small>{{ photo.uploaded|date:'Y N d H:i' }}</small>
+                <hr>
+                <p>{{ photo.description }}</p>
+            </div>
         </div>
 
     </div>

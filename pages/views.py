@@ -47,11 +47,6 @@ class ContactView(FormView):
     }
 
     def form_valid(self, form):
-        print(form.data["name"])
-        print(form.data["email"])
-        print(form.data["message"])
-
-        # todo send email for me!
         # use SendGrid for sending out emails
         send_mail(
             "Contact",
@@ -60,7 +55,6 @@ class ContactView(FormView):
             ['testaddress@gmail.com'],
             fail_silently=False
         )
-
 
         return super().form_valid(form)
 
