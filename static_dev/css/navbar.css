@@ -18,8 +18,9 @@
     cursor: pointer;
 }
 
-.nav-button i{
+i{
     font-size: 23px;
+    color: white;
 }
 
 .active {
