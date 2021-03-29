@@ -6,7 +6,7 @@
     <div class="gallery-layout">
         <div class="menu">
             {% for category in categories %}
-                <a href="/gallery/?category={{ category }}" class="category-button {% if request.GET.category == category.title %}active{% endif %}">{{ category }}</a>
+                <a href="/gallery/?category={{ category.title }}" class="category-button {% if request.GET.category == category.title %}active{% endif %}">{{ category.title }}</a>
             {% endfor %}
         </div>
 

@@ -10,37 +10,37 @@ from .forms import ContactForm
 class HomeView(TemplateView):
     template_name = "home.html"
 
-    def __init__(self):
-        super(HomeView, self).__init__()
-        self.extra_context = {
-            "photos": Photo.objects.filter(frontpage=True)
-        }
+    def get_context_data(self, **kwargs):
+        context = super(HomeView, self).get_context_data(**kwargs)
+        context["photos"] = Photo.objects.filter(frontpage=True)
 
         homepage_content = HomePage.objects.all()
         if homepage_content:
-            self.extra_context["title"] = homepage_content[0].title
-            self.extra_context["subtitle"] = homepage_content[0].subtitle
-            self.extra_context["content"] = homepage_content[0].content
+            context["title"] = homepage_content[0].title
+            context["subtitle"] = homepage_content[0].subtitle
+            context["content"] = homepage_content[0].content
+
+        return context
 
 
 class AboutView(TemplateView):
     template_name = "about.html"
 
-    def __init__(self):
-        super(AboutView, self).__init__()
+    def get_context_data(self, **kwargs):
+        context = super(AboutView, self).get_context_data(**kwargs)
 
         photos = Photo.objects.all()
 
         if photos:
-            self.extra_context = {
-                "photo": random.choice(photos)
-            }
+            context["photo"] = random.choice(photos)
 
         about_content = AboutPageModel.objects.all()
         if about_content:
-            self.extra_context["title"] = about_content[0].title
-            self.extra_context["subtitle"] = about_content[0].subtitle
-            self.extra_context["content"] = about_content[0].content
+            context["title"] = about_content[0].title
+            context["subtitle"] = about_content[0].subtitle
+            context["content"] = about_content[0].content
+
+        return context
 
 
 class ContactView(FormView):

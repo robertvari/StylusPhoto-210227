@@ -9,9 +9,11 @@ class GalleryView(ListView):
     model = Photo
     context_object_name = "photos"
 
-    extra_context = {
-        "categories": Category.objects.all(),
-    }
+    def get_context_data(self, **kwargs):
+        context = super(GalleryView, self).get_context_data(**kwargs)
+        context["categories"] = Category.objects.all()
+
+        return context
 
     def get_queryset(self):
         category_name = self.request.GET.get("category")
